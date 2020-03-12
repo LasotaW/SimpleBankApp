@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from .models import Person
-#from .models import ContactType
+from .models import Klienci
 
-admin.site.register(Person)
-#admin.site.register(ContactType)
+class Columns(admin.ModelAdmin):
+   list_display = ('Imię', 'Nazwisko','join_date', 'Contact', 'Status')
+
+admin.site.register(Klienci, Columns)
